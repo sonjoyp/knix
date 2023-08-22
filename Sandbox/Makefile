@@ -91,7 +91,7 @@ image: \
 	build/LoggingService.tar.gz \
 	build/FunctionWorker.tar.gz \
 	build/SandboxAgent.tar.gz
-	$(call build_image,Dockerfile,microfn/sandbox)
+	$(call build_image,Dockerfile,sandbox)
 
 image_java: \
 	Dockerfile_java \
@@ -101,11 +101,11 @@ image_java: \
 	build/JavaRequestHandler.tar.gz \
 	build/FunctionWorker.tar.gz \
 	build/SandboxAgent.tar.gz
-	$(call build_image,Dockerfile_java,microfn/sandbox_java)
+	$(call build_image,Dockerfile_java,sandbox_java)
 
 push: image image_java
-	$(call push_image,microfn/sandbox)
-	$(call push_image,microfn/sandbox_java)
+	$(call push_image,sandbox)
+	$(call push_image,sandbox_java)
 
 
 ##############################
@@ -124,7 +124,7 @@ test: image
 		--env http_proxy=$(HTTP_PROXY) \
 		--env https_proxy=$(HTTPS_PROXY) \
 		--net host \
-		microfn/sandbox
+		sandbox
 	#sleep 1
 	#curl --data '{"foo":"bar","mybool":true,"mynum":5.5}' http://127.0.0.1:33333/
 	#docker stop frontend

@@ -523,9 +523,9 @@ def handle(value, sapi):
         else:
             # We're running BARE METAL mode
             # _XXX_: due to the queue service still being in java in the sandbox
-            sandbox_image_name = "microfn/sandbox"
+            sandbox_image_name = "sandbox"
             if any(resource_info_map[res_name]["runtime"] == "Java" for res_name in resource_info_map):
-                sandbox_image_name = "microfn/sandbox_java"
+                sandbox_image_name = "sandbox_java"
 
             # TODO: intelligence on how to pick hosts
             hosts = sapi.get("available_hosts", True)

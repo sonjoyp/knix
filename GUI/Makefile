@@ -49,7 +49,7 @@ image:	$(shell find . -type f -not -name Makefile) \
 	app/pages/docs/sdk/sdk.md \
 	app/pages/docs/api/javadoc/index.html \
 	app/pages/docs/api/python/MicroFunctionsAPI.html
-	$(call build_image,Dockerfile,microfn/nginx)
+	$(call build_image,Dockerfile,nginx)
 
 push: image
-	$(call push_image,microfn/nginx)
+	$(call push_image,nginx)

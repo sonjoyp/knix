@@ -31,7 +31,7 @@ image: Dockerfile-riak \
 		src/mfn_counter_triggers.erl \
 		src/workflow_triggers.erl \
 		$(shell find script/ -type f)
-	$(call build_image,Dockerfile-riak,microfn/riak)
+	$(call build_image,Dockerfile-riak,riak)
 
 push: image
-	$(call push_image,microfn/riak)
+	$(call push_image,riak)

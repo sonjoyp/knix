@@ -23,8 +23,8 @@
     container_dir: "../"
     container_image: "sandbox.tar"
     container_image_java: "sandbox_java.tar"
-    container_tag: "microfn/sandbox"
-    container_java_tag: "microfn/sandbox_java"
+    container_tag: "sandbox"
+    container_java_tag: "sandbox_java"
     install_dir: "{{ mfn_server_installation_folder }}/sandbox"
     riak_connect: "{{ hostvars[groups['riak'][0]].ansible_ssh_host }}:8087"
 

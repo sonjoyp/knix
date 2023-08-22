@@ -33,7 +33,7 @@ manager:
       minReplicas: 1
       maxReplicas: 1
   setup:
-    imagePath: "/microfn/management"
+    imagePath: "/management"
     # imageTag: "latest" (default .Chart.AppVersion)
     imagePullPolicy: "Always"
     imagePullSecrets: []
@@ -46,8 +46,8 @@ manager:
         cpu: 100m
         memory: 1Gi
   sandbox:
-    imagePathPython: "/microfn/sandbox"
-    imagePathJava: "/microfn/sandbox_java"
+    imagePathPython: "/sandbox"
+    imagePathJava: "/sandbox_java"
     logLevel: "info"
     # imageTag: "latest" (default .Chart.AppVersion)
     imagePullPolicy: "Always"
@@ -76,7 +76,7 @@ manager:
 #------------------------------------------------------------------------------
 datalayer:
   replicas: 3
-  imagePath: "/microfn/datalayer"
+  imagePath: "/datalayer"
   # imageTag: "latest" (default .Chart.AppVersion)
   imagePullPolicy: "Always"
   imagePullSecrets: []
@@ -99,7 +99,7 @@ datalayer:
 #------------------------------------------------------------------------------
 riak:
   replicas: 3
-  imagePath: "/microfn/riak"
+  imagePath: "/riak"
   # imageTag: "latest" (default .Chart.AppVersion)
   imagePullPolicy: "Always"
   imagePullSecrets: []
@@ -158,7 +158,7 @@ elastic:
 nginx:
   Replicas: 1
   nameOverride: "microfunctions-nginx"
-  imagePath: "/microfn/nginx"
+  imagePath: "/nginx"
   # imageTag: "latest" (default .Chart.AppVersion)
   httpPort: 32180
   location: "/"
@@ -183,7 +183,7 @@ nginx:
 # TriggersFrontend 
 #------------------------------------------------------------------------------
 triggersFrontend:
-  imagePath: "/microfn/triggers_frontend"
+  imagePath: "/triggers_frontend"
   # imageTag: "latest" (default .Chart.AppVersion)
   imagePullPolicy: "Always"
   imagePullSecrets: []

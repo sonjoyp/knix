@@ -2,7 +2,7 @@
 ## Container images
 ##
 SHELL := /bin/bash
-REGISTRY ?= localhost:5000
+REGISTRY ?= sonjoyp
 SELF_DIR := $(dir $(lastword $(MAKEFILE_LIST)))
 VERSION ?= $(shell git -C $(SELF_DIR) describe --tags --dirty)
 

@@ -13,6 +13,9 @@
 #   limitations under the License.
 
 FROM openjdk:8-jdk-stretch
+RUN sed -i -e 's/deb.debian.org/archive.debian.org/g' \
+           -e 's|security.debian.org|archive.debian.org/|g' \
+           -e '/stretch-updates/d' /etc/apt/sources.list
 
 RUN apt-get update --fix-missing
 RUN apt-get -y --no-install-recommends install apt-utils dstat vim \

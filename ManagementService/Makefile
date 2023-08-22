@@ -63,10 +63,10 @@ include ../docker.mk
 image: \
 	Dockerfile \
 	management_deployment_package.tar.gz
-	$(call build_image,Dockerfile,microfn/management)
+	$(call build_image,Dockerfile,management)
 
 push: image
-	$(call push_image,microfn/management)
+	$(call push_image,management)
 
 test: image
 	docker run -i --rm --name management \
@@ -78,7 +78,7 @@ test: image
 		--env http_proxy=$(HTTP_PROXY) \
 		--env https_proxy=$(HTTPS_PROXY) \
 		--net host \
-		microfn/management
+		management
 
 print: image
 	docker run -i --rm --name management \
@@ -90,4 +90,4 @@ print: image
 		--env http_proxy=$(HTTP_PROXY) \
 		--env https_proxy=$(HTTPS_PROXY) \
 		--net host \
-		microfn/management python3 /opt/mfn/ManagementService/management_init.py print
+		management python3 /opt/mfn/ManagementService/management_init.py print

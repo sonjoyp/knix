@@ -21,7 +21,7 @@ spec:
   template:
     spec:
       containers:
-        - image: localhost:5000/microfn/sandbox
+        - image: sonjoyp/sandbox
           env:
             - name: TARGET
               value: Go Sample v1

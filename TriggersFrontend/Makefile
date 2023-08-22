@@ -36,7 +36,7 @@ clean:
 include ../docker.mk
 
 image: Dockerfile target/release/TriggersFrontend
-	$(call build_image,Dockerfile,microfn/triggers_frontend)
+	$(call build_image,Dockerfile,triggers_frontend)
 
 push: image
-	$(call push_image,microfn/triggers_frontend)
+	$(call push_image,triggers_frontend)
