@@ -59,7 +59,7 @@ RUN set -ex && \
     cd /build && \
     git clone https://github.com/davisp/jiffy.git && \
     cd jiffy && \
-    make build && \
+    ./rebar compile && \
     cd .. && \
     chmod -R 777 jiffy && \
     tar --exclude .git -cvzf jiffy.tgz jiffy && \
