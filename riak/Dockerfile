@@ -57,7 +57,7 @@ RUN set -ex && \
 RUN set -ex && \
     . /build/erlang/R16B02-basho10/activate && \
     cd /build && \
-    git clone https://github.com/davisp/jiffy.git && \
+    git clone https://github.com/davisp/jiffy.git --branch 1.0.1 && \
     cd jiffy && \
     ./rebar compile && \
     cd .. && \
